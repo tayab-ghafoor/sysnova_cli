@@ -1,0 +1,24 @@
+2026-05-14 07:39:11 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 500: {'detail': 'HTTP Error 500: Internal Server Error'}
+2026-05-14 07:39:12 - system_manager_cli.app - ERROR - Local login failed: table sessions has no column named token
+Traceback (most recent call last):
+  File "F:\SystemManagerCLI\src\system_manager_cli\app.py", line 347, in execute_login_user
+    result = self.auth_manager.authenticate_with_verification(email, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 402, in authenticate_with_verification
+    return self.authenticate(email, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 415, in authenticate
+    conn.execute(
+sqlite3.OperationalError: table sessions has no column named token
+2026-05-14 07:39:48 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 500: {'detail': 'HTTP Error 500: Internal Server Error'}
+2026-05-14 07:39:49 - system_manager_cli.app - ERROR - Local login failed: table sessions has no column named token
+Traceback (most recent call last):
+  File "F:\SystemManagerCLI\src\system_manager_cli\app.py", line 347, in execute_login_user
+    result = self.auth_manager.authenticate_with_verification(email, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 402, in authenticate_with_verification
+    return self.authenticate(email, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 415, in authenticate
+    conn.execute(
+sqlite3.OperationalError: table sessions has no column named token

@@ -1,0 +1,138 @@
+Metadata-Version: 2.4
+Name: system-manager-cli
+Version: 1.0.0
+Summary: System Manager CLI — local command-line tool for system health monitoring, backups, and log analysis.
+Author: System Manager CLI
+License: MIT
+Keywords: system,cli,backup,health,logs,automation
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: license.txt
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: google-api-python-client
+Requires-Dist: msal
+Requires-Dist: dropbox
+Requires-Dist: requests>=2.28
+Requires-Dist: tqdm
+Requires-Dist: psutil
+Requires-Dist: python-dotenv
+Requires-Dist: colorama>=0.4.6
+Provides-Extra: cloud-google
+Requires-Dist: google-auth>=2.0; extra == "cloud-google"
+Requires-Dist: google-auth-oauthlib>=1.0; extra == "cloud-google"
+Requires-Dist: google-auth-httplib2>=0.2; extra == "cloud-google"
+Requires-Dist: google-api-python-client>=2.0; extra == "cloud-google"
+Provides-Extra: cloud-onedrive
+Requires-Dist: msal>=1.20; extra == "cloud-onedrive"
+Requires-Dist: requests>=2.28; extra == "cloud-onedrive"
+Provides-Extra: cloud-dropbox
+Requires-Dist: dropbox>=11.36; extra == "cloud-dropbox"
+Provides-Extra: cloud-s3
+Requires-Dist: boto3>=1.26; extra == "cloud-s3"
+Provides-Extra: cloud-backblaze
+Requires-Dist: b2sdk>=1.18; extra == "cloud-backblaze"
+Provides-Extra: cloud-sftp
+Requires-Dist: paramiko>=3.0; extra == "cloud-sftp"
+Provides-Extra: cloud-all
+Requires-Dist: google-auth>=2.0; extra == "cloud-all"
+Requires-Dist: google-auth-oauthlib>=1.0; extra == "cloud-all"
+Requires-Dist: google-auth-httplib2>=0.2; extra == "cloud-all"
+Requires-Dist: google-api-python-client>=2.0; extra == "cloud-all"
+Requires-Dist: msal>=1.20; extra == "cloud-all"
+Requires-Dist: requests>=2.28; extra == "cloud-all"
+Requires-Dist: dropbox>=11.36; extra == "cloud-all"
+Requires-Dist: boto3>=1.26; extra == "cloud-all"
+Requires-Dist: paramiko>=3.0; extra == "cloud-all"
+Provides-Extra: encryption
+Requires-Dist: cryptography>=41.0; extra == "encryption"
+Dynamic: license-file
+
+# System Manager CLI
+
+System Manager CLI is a local command-line tool for system health checks, log analysis, file organization, scheduled maintenance, and backup workflows.
+
+## Status
+
+This project is being hardened toward production use. Current storage is local SQLite, and paid subscription enforcement is not included yet.
+
+## Features
+
+- Email-verified local user accounts
+- SQLite-backed users and sessions
+- System health checks for disk, CPU, memory, and required paths
+- Log parsing, redaction, anomaly detection, and JSON reports
+- File organization and temporary-file handling
+- Local backups and optional cloud-provider integrations
+- Scheduled task management
+- SMTP notifications
+- Optional AI log enrichment when `ANTHROPIC_API_KEY` is configured
+
+## Installation
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[test]"
+```
+
+For Google Drive backup support:
+
+```powershell
+python -m pip install -e ".[google-drive]"
+```
+
+## Configuration
+
+Copy `.env.example` to `.env` and fill in local values:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Important values:
+
+- `APP_ENV=production` for normal use.
+- `SYSTEM_MANAGER_DEV_MODE=false` in production.
+- `EMAIL_SENDER` and `EMAIL_PASSWORD` for SMTP.
+- `EMAIL_RECIPIENT` for system alert emails.
+- `BACKUP_DRIVE` for an external or dedicated backup location.
+- `ANTHROPIC_API_KEY` only if AI log enrichment is needed.
+
+Runtime data is stored under `data/`, including `data/system_manager.db`.
+
+## Run
+
+```powershell
+system-manager
+```
+
+Or from source:
+
+```powershell
+python -m system_manager_cli.main
+```
+
+## Development Checks
+
+```powershell
+python -m compileall -q src system_manager_cli tests
+python -m unittest discover -s tests -v
+```
+
+## Documentation
+
+- [User Guide](docs/USER_GUIDE.md)
+- [Production Guide](docs/PRODUCTION.md)
+- [Security Policy](SECURITY.md)
+- [Privacy Policy](docs/PRIVACY.md)
+- [Refund Policy](docs/REFUND_POLICY.md)
+- [Release Checklist](docs/RELEASE_CHECKLIST.md)
+- [Changelog](CHANGELOG.md)
+
+## Support
+
+For commercial use, publish a support email before selling subscriptions. Until then, use the issue tracker or repository owner contact.

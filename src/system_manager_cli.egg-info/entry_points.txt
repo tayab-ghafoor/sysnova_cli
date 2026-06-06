@@ -1,0 +1,2 @@
+[console_scripts]
+sysmanager = system_manager_cli.main:main

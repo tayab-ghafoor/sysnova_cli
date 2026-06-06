@@ -1,0 +1,78 @@
+{
+  "Analysis": {
+    "active_only": [
+      "Health_monitor.py",
+      "aggregate.py",
+      "analyzer.py",
+      "anomaly.py",
+      "correlater.py",
+      "reader.py",
+      "recommender.py",
+      "scanner.py",
+      "scrubber.py"
+    ],
+    "legacy_only": [
+      "Live_monitor.py",
+      "Notifier.py"
+    ],
+    "same": [],
+    "different": [
+      "__init__.py"
+    ]
+  },
+  "application": {
+    "active_only": [],
+    "legacy_only": [
+      "__init__.py",
+      "auth_service.py",
+      "backup_service.py",
+      "log_analysis_service.py",
+      "scheduler_service.py"
+    ],
+    "same": [],
+    "different": []
+  },
+  "CLI": {
+    "active_only": [
+      "CLI.py",
+      "menu.py",
+      "prompts.py"
+    ],
+    "legacy_only": [
+      "Backup_commands.py",
+      "auth_command.py",
+      "log_command.py",
+      "menu_display.py",
+      "scheduler_command.py",
+      "system_commands.py"
+    ],
+    "same": [],
+    "different": [
+      "__init__.py"
+    ]
+  },
+  "core": {
+    "active_only": [
+      "Auth_manager.py",
+      "Backup_manager.py",
+      "Exception.py",
+      "validator.py"
+    ],
+    "legacy_only": [
+      "Async_tasks.py",
+      "Auth.py",
+      "Backup_system_manager.py",
+      "File_organizer.py",
+      "advanced_logs_orchestrator.py",
+      "google_drive_manager.py",
+      "rclon_manager.py",
+      "scheduler.py",
+      "scheduler_cli.py",
+      "scheduler_core.py"
+    ],
+    "same": [],
+    "different": [
+      "__init__.py"
+    ]
+  }
+}

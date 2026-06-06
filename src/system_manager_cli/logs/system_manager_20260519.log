@@ -1,0 +1,144 @@
+2026-05-19 07:24:45 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 07:24:45 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 07:24:51 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 07:26:24 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 07:26:24 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 07:26:36 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 07:29:37 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 07:29:37 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 07:29:43 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 07:30:02 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 07:30:02 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 07:30:08 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 07:30:45 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 07:30:45 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 07:30:51 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 07:31:15 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 07:31:15 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 07:31:22 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:54:29 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:54:29 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:54:34 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:54:36 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:54:36 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:54:41 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:54:43 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:54:43 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:54:48 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:54:50 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:54:50 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:54:56 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:54:57 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:54:57 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:55:02 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:55:04 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:55:04 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:55:09 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:55:11 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:55:11 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:55:16 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:55:17 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:55:17 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:55:23 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:55:25 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:55:25 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:55:31 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:56:45 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:56:45 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:56:51 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:56:52 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:56:52 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:56:57 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:56:59 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:56:59 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:04 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:57:07 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:57:07 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:13 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:57:14 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:57:14 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:19 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:57:21 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:57:21 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:26 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:57:27 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:57:27 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:33 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:57:34 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:57:34 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:39 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 12:57:43 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 12:57:43 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 12:57:48 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-19 15:57:52 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 15:57:52 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:29:14 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:29:14 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:39:47 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:39:47 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:39:47 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:39:47 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:43:33 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:43:33 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:43:35 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:43:35 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:43:36 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:43:36 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:43:37 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:43:37 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:46:28 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:46:28 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:46:29 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:46:29 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:47:39 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:47:39 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:47:42 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:47:42 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:47:42 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:47:42 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:48:51 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:48:51 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:48:52 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:48:52 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:48:52 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:48:52 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:33 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:49:33 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:35 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:37 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/check-tier -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:37 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/suggest -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:39 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/analyze -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:39 - system_manager_cli.app - WARNING - Backend AI returned: None
+2026-05-19 21:49:40 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/logs/ -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:40 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/emails/trigger -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:41 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:49:41 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:42 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:44 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:44 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:49:44 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:45 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:48 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:48 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:49:48 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:50 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:51 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/backups/ -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:52 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/emails/trigger -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:52 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:49:52 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:54 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:55 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:49:55 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:49:57 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:49:59 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/check-tier -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:49:59 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/suggest -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:50:01 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/analyze -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:50:01 - system_manager_cli.app - WARNING - Backend AI returned: None
+2026-05-19 21:50:02 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/logs/ -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:50:02 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/emails/trigger -> 401: {'detail': 'Invalid or expired token.'}
+2026-05-19 21:50:03 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:50:03 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:50:05 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-19 21:50:06 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-19 21:50:06 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-19 21:50:08 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}

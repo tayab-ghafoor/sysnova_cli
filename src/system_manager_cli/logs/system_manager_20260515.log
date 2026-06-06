@@ -1,0 +1,43 @@
+2026-05-15 07:43:38 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 07:43:38 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 07:46:17 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-15 08:03:17 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 08:03:17 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 08:03:44 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-15 08:11:08 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 08:11:08 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 08:18:10 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 08:18:10 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 08:18:59 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 08:18:59 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 11:15:23 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 11:15:23 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 11:15:25 - system_manager_cli.app - ERROR - Local login failed: table sessions has no column named token
+Traceback (most recent call last):
+  File "F:\SystemManagerCLI\src\system_manager_cli\app.py", line 371, in execute_login_user
+    result = self.auth_manager.authenticate_with_verification(email, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 402, in authenticate_with_verification
+    return self.authenticate(email, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 415, in authenticate
+    conn.execute(
+sqlite3.OperationalError: table sessions has no column named token
+2026-05-15 11:16:31 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 11:16:31 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 11:16:34 - system_manager_cli.app - ERROR - Local login failed: NOT NULL constraint failed: sessions.token_hash
+Traceback (most recent call last):
+  File "F:\SystemManagerCLI\src\system_manager_cli\app.py", line 371, in execute_login_user
+    result = self.auth_manager.authenticate_with_verification(email, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 417, in authenticate_with_verification
+    return self.authenticate(email, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 430, in authenticate
+    conn.execute(
+sqlite3.IntegrityError: NOT NULL constraint failed: sessions.token_hash
+2026-05-15 11:25:35 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 11:25:35 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 21:26:10 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-15 21:26:10 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-15 21:26:15 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.

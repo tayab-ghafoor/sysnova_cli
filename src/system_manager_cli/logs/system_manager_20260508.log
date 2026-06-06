@@ -1,0 +1,12 @@
+2026-05-08 09:43:48 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-08 10:03:45 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-08 11:06:45 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-08 11:14:08 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login → 401: {'detail': 'Invalid email or password.'}
+2026-05-08 11:15:02 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-08 11:16:16 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-08 11:46:43 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-08 14:23:49 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/register -> 400: {'detail': 'Email is already registered.'}
+2026-05-08 15:12:23 - system_manager_cli.core.backend_client - WARNING - Backend GET /api/v1/auth/verify-email?token=57557 -> 405: {'detail': 'Method Not Allowed'}
+2026-05-08 15:13:25 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-08 15:13:59 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-08 15:15:20 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 403: {'detail': 'Please verify your email before logging in.'}

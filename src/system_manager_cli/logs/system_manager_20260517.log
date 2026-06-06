@@ -1,0 +1,12 @@
+2026-05-17 06:55:43 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-17 06:55:43 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-17 06:56:08 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-17 06:57:05 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-17 09:47:19 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-17 09:47:19 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-17 09:47:44 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-17 09:48:01 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-17 10:00:29 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-17 10:00:29 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-17 10:01:01 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-17 10:01:18 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}

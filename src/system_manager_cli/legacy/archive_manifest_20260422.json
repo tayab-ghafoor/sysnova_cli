@@ -1,0 +1,52 @@
+{
+  "Analysis": {
+    "archive": "analysis_snapshot_20260422.zip",
+    "file_count": 3,
+    "files": [
+      "Live_monitor.py",
+      "Notifier.py",
+      "__init__.py"
+    ]
+  },
+  "application": {
+    "archive": "application_snapshot_20260422.zip",
+    "file_count": 5,
+    "files": [
+      "__init__.py",
+      "auth_service.py",
+      "backup_service.py",
+      "log_analysis_service.py",
+      "scheduler_service.py"
+    ]
+  },
+  "CLI": {
+    "archive": "cli_snapshot_20260422.zip",
+    "file_count": 7,
+    "files": [
+      "Backup_commands.py",
+      "__init__.py",
+      "auth_command.py",
+      "log_command.py",
+      "menu_display.py",
+      "scheduler_command.py",
+      "system_commands.py"
+    ]
+  },
+  "core": {
+    "archive": "core_snapshot_20260422.zip",
+    "file_count": 11,
+    "files": [
+      "Async_tasks.py",
+      "Auth.py",
+      "Backup_system_manager.py",
+      "File_organizer.py",
+      "__init__.py",
+      "advanced_logs_orchestrator.py",
+      "google_drive_manager.py",
+      "rclon_manager.py",
+      "scheduler.py",
+      "scheduler_cli.py",
+      "scheduler_core.py"
+    ]
+  }
+}

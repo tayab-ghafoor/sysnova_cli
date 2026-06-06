@@ -1,0 +1,6 @@
+2026-04-26 12:08:07 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-26 12:11:36 - system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-04-26 12:11:36 - system_manager_cli.core.Packager - INFO - Copying files to: D:\
+2026-04-26 12:11:37 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-04-26 12:11:39 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-04-26 12:11:39 - system_manager_cli.Providers.rclone_provider - INFO - rclone copy: D:\ → gdrive:

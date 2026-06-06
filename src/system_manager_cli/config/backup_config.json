@@ -1,0 +1,10 @@
+{
+    "last_destination_path": "F:\\system_backups\\",
+    "email": null,
+    "rclone_remotes": [
+        {
+            "storage_name": "Google Drive",
+            "remote_name": "gdrive"
+        }
+    ]
+}

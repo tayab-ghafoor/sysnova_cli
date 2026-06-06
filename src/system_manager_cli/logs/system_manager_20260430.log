@@ -1,0 +1,12 @@
+2026-04-30 09:22:56 - src.system_manager_cli.Analysis.ai_analyzer - WARNING - Anthropic API key not found — skipping AI enrichment.
+2026-04-30 15:56:25 - src.system_manager_cli.core.Auth_manager - INFO - User registered: testuser@example.com (pending email verification)
+2026-04-30 15:56:35 - src.system_manager_cli.core.Auth_manager - INFO - Verification email sent to testuser@example.com
+2026-04-30 15:59:12 - src.system_manager_cli.core.Auth_manager - INFO - Email verified for: testuser@example.com
+2026-04-30 16:02:14 - src.system_manager_cli.logs_analysis.Analysis.ai_analyzer - WARNING - Anthropic API key not found — skipping AI enrichment.
+2026-04-30 16:27:06 - src.system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-04-30 16:27:06 - src.system_manager_cli.core.backup_service - INFO - Copying sources to: F:\BackupFolder
+2026-04-30 16:28:36 - src.system_manager_cli.core.backup_service - INFO - === Backup flow completed ===
+2026-04-30 19:57:53 - src.system_manager_cli.core.Auth_manager - INFO - User registered: tayabghafoor57@gmail.com (pending email verification)
+2026-04-30 19:57:56 - src.system_manager_cli.core.Auth_manager - INFO - Verification email sent to tayabghafoor57@gmail.com
+2026-04-30 20:01:50 - src.system_manager_cli.core.Auth_manager - INFO - Email verified for: tayabghafoor57@gmail.com
+2026-04-30 20:03:57 - src.system_manager_cli.logs_analysis.Analysis.ai_analyzer - WARNING - Anthropic API key not found — skipping AI enrichment.

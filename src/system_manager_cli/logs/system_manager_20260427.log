@@ -1,0 +1,11 @@
+2026-04-27 13:09:13 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-27 13:12:14 - system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-04-27 13:12:14 - system_manager_cli.core.Packager - INFO - Copying files to: D:\
+2026-04-27 13:12:16 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-04-27 13:12:18 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-04-27 13:12:18 - system_manager_cli.Providers.rclone_provider - INFO - rclone copy: D:\ → gdrive:
+2026-04-27 13:14:04 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-27 13:46:44 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-27 13:50:00 - src.system_manager_cli.core.settings_manager - INFO - Saved settings to D:\SystemManagerCLI\data\settings.json
+2026-04-27 13:50:00 - src.system_manager_cli.core.settings_manager - INFO - Setting updated: file_organizer.delete_temp_permanently = True
+2026-04-27 21:40:03 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json

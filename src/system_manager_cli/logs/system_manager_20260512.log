@@ -1,0 +1,22 @@
+2026-05-12 10:33:05 - system_manager_cli.app - WARNING - Backend at https://web-production-c1924.up.railway.app is not reachable. Using local auth and skipping cloud features.
+2026-05-12 10:33:32 - system_manager_cli.app - ERROR - Local login failed: table sessions has no column named token
+Traceback (most recent call last):
+  File "F:\SystemManagerCLI\src\system_manager_cli\app.py", line 285, in execute_login_user
+    result = self.auth_manager.authenticate_with_verification(email, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 402, in authenticate_with_verification
+    return self.authenticate(email, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\SystemManagerCLI\src\system_manager_cli\core\Auth_manager.py", line 415, in authenticate
+    conn.execute(
+sqlite3.OperationalError: table sessions has no column named token
+2026-05-12 12:42:11 - system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-05-12 12:42:11 - system_manager_cli.core.backup_service - INFO - Copying sources to: F:\system_backups\
+2026-05-12 12:42:13 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-05-12 12:42:15 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-05-12 12:42:15 - system_manager_cli.Providers.rclone_provider - INFO - rclone copy: F:\system_backups\health_menu.py → gdrive:
+2026-05-12 12:42:27 - system_manager_cli.Providers.rclone_provider - INFO - rclone upload complete: F:\system_backups\health_menu.py → gdrive:
+2026-05-12 12:42:48 - system_manager_cli.core.Packager - INFO - Local backup file deleted: F:\system_backups\health_menu.py
+2026-05-12 12:42:48 - system_manager_cli.core.backup_service - INFO - === Backup flow completed ===
+2026-05-12 15:30:36 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/check-tier -> 404: {'detail': 'Not Found'}
+2026-05-12 15:30:36 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/ai/suggest -> 404: {'detail': 'Not Found'}

@@ -1,0 +1,14 @@
+{
+    "dashboard_enabled": true,
+    "dashboard_host": "127.0.0.1",
+    "dashboard_port": 8000,
+    "dashboard_report_dir": "reports",
+    "email_alerts_enabled": false,
+    "alert_email": "",
+    "backend_url": "",
+    "ai_summary_enabled": true,
+    "error_threshold": 50,
+    "time_window_sec": 60,
+    "report_retention_days": 30,
+    "last_scan_path": ""
+}

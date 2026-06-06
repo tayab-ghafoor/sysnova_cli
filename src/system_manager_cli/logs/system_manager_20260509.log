@@ -1,0 +1,17 @@
+2026-05-09 12:37:33 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 403: {'detail': 'Please verify your email before logging in.'}
+2026-05-09 13:12:38 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/register -> 400: {'detail': 'Email is already registered.'}
+2026-05-09 14:39:10 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 403: {'detail': 'Please verify your email before logging in. The server could not send a verification email. Check RESEND_API_KEY and EMAIL_FROM in Railway. If EMAIL_FROM uses onboarding@resend.dev, Resend may only deliver to your verified account email until you verify a sending domain.'}
+2026-05-09 21:20:07 - system_manager_cli.app - ERROR - Analysis error: name 'classified_data' is not defined
+Traceback (most recent call last):
+  File "F:\SystemManagerCLI\src\system_manager_cli\app.py", line 407, in execute_log_analysis
+    cleaned_data    = self.scrubber.scrub(classified_data)
+                                          ^^^^^^^^^^^^^^^
+NameError: name 'classified_data' is not defined. Did you mean: 'Fzclassified_data'?
+2026-05-09 21:41:38 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:41 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:42 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:44 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:46 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:49 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:51 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-09 21:41:53 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}

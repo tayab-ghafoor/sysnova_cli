@@ -1,0 +1,40 @@
+2026-05-01 09:07:25 - src.system_manager_cli.app - INFO - Health alert email sent to tayabghafoor48@gmail.com (status=warning)
+2026-05-01 09:21:01 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:01 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:01 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:02 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:02 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:02 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:02 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:21:02 - system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-05-01 09:22:18 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:23:13 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:23:15 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:23:22 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:24:28 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:25:41 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:25:44 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:25:55 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:27:29 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:27:29 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:33:28 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:33:28 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:38:02 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:38:03 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:39:03 - system_manager_cli.core.Auth_manager - INFO - Migrated legacy auth JSON files into F:\SystemManagerCLI\data\system_manager.db
+2026-05-01 09:40:14 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:40:22 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:44:54 - system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-05-01 09:44:54 - system_manager_cli.core.backup_service - INFO - Copying sources to: F:\system_backups\
+2026-05-01 09:44:54 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-05-01 09:44:57 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-05-01 09:44:57 - system_manager_cli.Providers.rclone_provider - INFO - rclone copy: F:\system_backups\Auth_manager.py → gdrive:
+2026-05-01 09:45:44 - system_manager_cli.Providers.rclone_provider - INFO - rclone upload complete: F:\system_backups\Auth_manager.py → gdrive:
+2026-05-01 09:45:59 - system_manager_cli.core.Packager - INFO - Local backup file deleted: F:\system_backups\Auth_manager.py
+2026-05-01 09:45:59 - system_manager_cli.core.backup_service - INFO - === Backup flow completed ===
+2026-05-01 09:56:57 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 09:57:06 - system_manager_cli.app - INFO - Log analysis email auto-sent to tayabghafoor48@gmail.com (critical=1, errors=2)
+2026-05-01 15:26:24 - system_manager_cli.core.Auth_manager - INFO - Schema migration: added column users.verification_attempts
+2026-05-01 15:26:24 - system_manager_cli.core.Auth_manager - INFO - Schema migration: added column users.failed_login_count
+2026-05-01 15:26:24 - system_manager_cli.core.Auth_manager - INFO - Schema migration: added column users.locked_until
+2026-05-01 15:26:25 - system_manager_cli.core.Auth_manager - WARNING - Schema migration: sessions table rebuilt with hashed tokens. All active sessions have been invalidated.

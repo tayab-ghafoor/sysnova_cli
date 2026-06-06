@@ -1,0 +1,3 @@
+2026-05-16 15:30:41 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-16 15:30:41 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-16 15:31:19 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}

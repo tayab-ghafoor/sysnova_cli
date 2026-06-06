@@ -1,0 +1,12 @@
+2026-04-29 06:37:13 - src.system_manager_cli.app - ERROR - Analysis error: [Errno 13] Permission denied: 'C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-FileHistory-Engine%4BackupLog.evtx'
+Traceback (most recent call last):
+  File "f:\SystemManagerCLI\src\system_manager_cli\app.py", line 166, in execute_log_analysis
+    raw_data       = self.reader.read(file_path)
+  File "f:\SystemManagerCLI\src\system_manager_cli\Analysis\reader.py", line 31, in read
+    with file_path.open('r', encoding='utf-8', errors='ignore') as handle:
+         ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Windows\\System32\\winevt\\Logs\\Microsoft-Windows-FileHistory-Engine%4BackupLog.evtx'
+2026-04-29 12:11:13 - src.system_manager_cli.core.backup_service - INFO - === Backup flow started ===

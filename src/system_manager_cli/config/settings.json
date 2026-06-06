@@ -1,0 +1,42 @@
+{
+  "app": {
+    "name": "SysNova",
+    "version": "1.0.0",
+    "debug": false,
+    "log_level": "INFO"
+  },
+  "backup": {
+    "default_type": "incremental",
+    "compression": true,
+    "retention_days": 30,
+    "max_backup_size_mb": 1000
+  },
+  "analysis": {
+    "enable_anomaly_detection": true,
+    "log_retention_days": 7,
+    "max_log_size_mb": 100
+  },
+  "notifications": {
+    "email_enabled": false,
+    "email_server": "",
+    "email_port": 587,
+    "email_username": "",
+    "email_password": "",
+    "alert_email": ""
+  },
+  "security": {
+    "session_timeout_minutes": 60,
+    "max_login_attempts": 3,
+    "password_min_length": 8,
+    "require_email_verification": true
+  },
+  "ui": {
+    "theme": "default",
+    "language": "en",
+    "date_format": "YYYY-MM-DD",
+    "time_format": "HH:mm:ss"
+  },
+  "file_organizer": {
+    "delete_temp_permanently": false
+  }
+}

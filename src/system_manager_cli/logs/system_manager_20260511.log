@@ -1,0 +1,3 @@
+2026-05-11 15:22:09 - system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-05-11 15:22:09 - system_manager_cli.core.backup_service - INFO - Copying sources to: F:\system_backups\
+2026-05-11 15:22:12 - system_manager_cli.Providers.gdrive_provider - ERROR - Credentials file missing: F:\SystemManagerCLI\config\gdrive_credentials.json

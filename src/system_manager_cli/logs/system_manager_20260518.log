@@ -1,0 +1,27 @@
+2026-05-18 12:58:53 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-18 12:58:53 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-18 15:48:04 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-18 15:48:04 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-18 15:50:05 - system_manager_cli.core.backup_service - INFO - === Backup flow started ===
+2026-05-18 15:50:05 - system_manager_cli.core.backup_service - INFO - Copying sources to: F:\system_backups\
+2026-05-18 15:50:06 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-05-18 15:50:08 - system_manager_cli.Providers.rclone_provider - INFO - rclone remote verified: gdrive
+2026-05-18 15:50:08 - system_manager_cli.Providers.rclone_provider - INFO - rclone copy: F:\system_backups\production_report.md → gdrive:
+2026-05-18 15:50:32 - system_manager_cli.Providers.rclone_provider - INFO - rclone upload complete: F:\system_backups\production_report.md → gdrive:
+2026-05-18 15:50:39 - system_manager_cli.core.Packager - INFO - Local backup file deleted: F:\system_backups\production_report.md
+2026-05-18 15:50:39 - system_manager_cli.core.backup_service - INFO - === Backup flow completed ===
+2026-05-18 16:11:21 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-18 16:11:21 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-18 16:12:11 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:12:30 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:15:21 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-18 16:15:21 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-18 16:15:38 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:24:52 - system_manager_cli.core.scheduled_task_runner - INFO - Scheduled task runner started (check interval: 60 seconds)
+2026-05-18 16:24:52 - system_manager_cli.app - INFO - Scheduled task auto-runner started (daemon, 60s interval)
+2026-05-18 16:25:03 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:25:13 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:25:35 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:25:43 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}
+2026-05-18 16:26:37 - system_manager_cli.app - WARNING - Backend reset-password failed: BackendClient.reset_password() takes 4 positional arguments but 5 were given. Using local.
+2026-05-18 16:27:38 - system_manager_cli.core.backend_client - WARNING - Backend POST /api/v1/auth/login -> 401: {'detail': 'Invalid email or password.'}

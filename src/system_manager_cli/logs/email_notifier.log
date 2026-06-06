@@ -1,0 +1,53 @@
+2026-04-28 12:27:51 - src.system_manager_cli.Notifications.Emailer - ERROR - Email configuration missing. Set EMAIL_SENDER and EMAIL_PASSWORD in system_manager_cli/.env.
+2026-04-28 12:56:30 - src.system_manager_cli.Notifications.Emailer - ERROR - Email configuration missing. Sender: '', Password: EMPTY
+2026-04-28 13:42:33 - src.system_manager_cli.Notifications.Emailer - ERROR - Email configuration missing in .env. Sender: 'MISSING', Password: EMPTY
+2026-04-28 13:42:33 - src.system_manager_cli.Notifications.Emailer - INFO - Email sent successfully to recipient@example.com: Test Subject
+2026-04-28 13:42:33 - src.system_manager_cli.Notifications.Emailer - INFO - Email sent successfully to recipient@example.com: TLS Subject
+2026-04-28 13:47:42 - src.system_manager_cli.Notifications.Emailer - ERROR - Email configuration missing in .env. Sender: 'MISSING', Password: EMPTY
+2026-04-28 14:01:34 - src.system_manager_cli.Notifications.Emailer - ERROR - Email configuration missing in .env. Sender: 'MISSING', Password: EMPTY
+2026-04-28 15:42:47 - src.system_manager_cli.Notifications.Emailer - ERROR - EMAIL_SENDER is not set. Add EMAIL_SENDER=your@gmail.com to your .env file.
+2026-04-30 15:56:35 - src.system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=testuser@example.com  subject=System Manager CLI — Email Verification Code
+2026-04-30 19:57:56 - src.system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=tayabghafoor57@gmail.com  subject=System Manager CLI — Email Verification Code
+2026-04-30 19:58:00 - src.system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=tayabghafoor57@gmail.com  subject=Welcome to System Manager CLI — Account Created
+2026-04-30 20:04:21 - src.system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=tayabghafoor57@gmail.com  subject=System Manager CLI — Log Analysis Report
+2026-05-01 09:07:25 - src.system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=tayabghafoor48@gmail.com  subject=⚠️  System Health Alert — WARNING
+2026-05-01 09:23:25 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-01 09:23:25 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-01 09:23:25 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-01 09:25:57 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-01 09:25:57 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-01 09:25:57 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-01 09:40:25 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-01 09:40:25 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-01 09:40:25 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-01 09:57:08 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-01 09:57:08 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-01 09:57:08 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-09 15:26:25 - system_manager_cli.Notifications.smtp - ERROR - SMTP auth failed for tayabghafoor786@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-45491cab9c2sm11658673f8f.31 - gsmtp')
+2026-05-09 22:06:30 - system_manager_cli.Notifications.smtp - ERROR - SMTP auth failed for tayabghafoor786@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48e702ec599sm54554005e9.11 - gsmtp')
+2026-05-10 13:19:12 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-10 13:19:12 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-10 13:19:12 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-10 13:20:25 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-10 13:20:25 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-10 13:20:25 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-10 13:23:07 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-10 13:23:07 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-10 13:23:07 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-12 15:31:22 - system_manager_cli.Notifications.smtp - ERROR - SMTP auth failed for tayabghafoor786@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48e908d890fsm34285915e9.15 - gsmtp')
+2026-05-13 11:06:53 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-13 11:06:53 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-13 11:06:53 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-13 11:08:22 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-13 11:08:22 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-13 11:08:22 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-13 11:10:28 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-13 11:10:28 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-13 11:10:28 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-15 21:29:42 - system_manager_cli.Notifications.smtp - ERROR - SMTP auth failed for tayabghafoor786@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48fe537ccf5sm74545845e9.14 - gsmtp')
+2026-05-19 12:55:33 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-19 12:55:33 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-19 12:55:33 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject
+2026-05-19 12:57:51 - system_manager_cli.Notifications.smtp - ERROR - Email not sent: EMAIL_SENDER / EMAIL_PASSWORD missing in .env
+2026-05-19 12:57:51 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=Test Subject
+2026-05-19 12:57:51 - system_manager_cli.Notifications.smtp - INFO - Email sent ✓  to=recipient@example.com  subject=TLS Subject

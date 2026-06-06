@@ -1,0 +1,139 @@
+2026-04-22 07:40:06 - src.system_manager_cli.core.Auth_manager - INFO - Registered user route@example.com
+2026-04-22 07:40:07 - src.system_manager_cli.core.Auth_manager - INFO - Authenticated user route@example.com
+2026-04-22 07:41:04 - src.system_manager_cli.core.Auth_manager - INFO - Registered user route@example.com
+2026-04-22 07:41:05 - src.system_manager_cli.core.Auth_manager - INFO - Authenticated user route@example.com
+2026-04-22 07:59:00 - src.system_manager_cli.core.Auth_manager - INFO - Registered user route@example.com
+2026-04-22 07:59:01 - src.system_manager_cli.core.Auth_manager - INFO - Authenticated user route@example.com
+2026-04-22 13:35:27 - src.system_manager_cli.CLI.CLI - INFO - Starting CLI loop
+2026-04-22 13:56:21 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 13:57:41 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 13:58:22 - src.system_manager_cli.Analysis.Notifier - INFO - Evaluating analysis results for notifications
+2026-04-22 13:58:22 - src.system_manager_cli.Analysis.Notifier - INFO - Notification evaluation complete: 0 alerts, 0 notifications sent
+2026-04-22 13:58:22 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 13:58:47 - src.system_manager_cli.Analysis.Notifier - INFO - Evaluating analysis results for notifications
+2026-04-22 13:58:47 - src.system_manager_cli.Analysis.Notifier - INFO - Notification evaluation complete: 0 alerts, 0 notifications sent
+2026-04-22 13:58:49 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 13:59:13 - src.system_manager_cli.Analysis.Notifier - INFO - Evaluating analysis results for notifications
+2026-04-22 13:59:13 - src.system_manager_cli.Analysis.Notifier - INFO - Notification evaluation complete: 0 alerts, 0 notifications sent
+2026-04-22 13:59:13 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 14:00:25 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 14:01:03 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 14:01:41 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 14:02:08 - src.system_manager_cli.app - ERROR - Unexpected analysis failure: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+Traceback (most recent call last):
+  File "D:\SystemManagerCLI\src\system_manager_cli\app.py", line 85, in execute_log_analysis
+    validate_path_exists(file_path, 'any')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\SystemManagerCLI\src\system_manager_cli\core\validator.py", line 20, in validate_path_exists
+    path = Path(path_str).expanduser()
+           ~~~~^^^^^^^^^^
+  File "C:\Users\HP 440 G2\AppData\Local\Python\pythoncore-3.14-64\Lib\pathlib\__init__.py", line 150, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'dict'
+2026-04-22 14:02:19 - src.system_manager_cli.CLI.CLI - INFO - Starting CLI loop
+2026-04-22 16:59:01 - src.system_manager_cli.CLI.CLI - INFO - Starting CLI loop
+2026-04-22 17:09:14 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-22 17:10:47 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-22 19:41:26 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-22 19:41:26 - src.system_manager_cli.CLI.CLI - INFO - Starting CLI loop
+2026-04-22 22:23:17 - src.system_manager_cli.core.settings_manager - INFO - Loaded settings from D:\SystemManagerCLI\data\settings.json
+2026-04-22 22:23:17 - src.system_manager_cli.CLI.CLI - INFO - Starting CLI loop
+2026-04-22 22:24:34 - src.system_manager_cli.CLI.CLI - INFO - CLI loop stopped
