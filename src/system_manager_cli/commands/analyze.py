@@ -3,18 +3,19 @@ commands/analyze.py — Direct CLI handler for: sysmanager analyze
 
 Usage
 ─────
-    sysmanager analyze /var/log          # Analyze a path, print report
-    sysmanager analyze .                 # Analyze current directory
-    sysmanager analyze /logs --no-ai     # Skip AI enrichment
+    sysmanager analyze /var/log          Analyze a path, print report
+    sysmanager analyze .                 Analyze current directory
+    sysmanager analyze /logs --no-ai     Skip AI enrichment
     sysmanager analyze /logs --email a@b.com
     sysmanager analyze /logs --output json
-    sysmanager analyze /logs --json      # Machine-readable JSON to stdout
-    sysmanager analyze /logs --quiet     # Minimal output
+    sysmanager analyze /logs --json      Equivalent to --output json
+    sysmanager analyze /logs --quiet     Minimal output
+    sysmanager analyze /logs --verbose   Include full anomaly + AI detail
 
 Exit codes
 ──────────
-    0   success, no critical/high anomalies
-    1   success, but anomalies detected (warning or higher)
+    0   success, no anomalies detected
+    1   success, anomalies detected (any severity)
     2   success, critical anomalies detected
     3   analysis error / path not found
 """
@@ -93,28 +94,44 @@ def _highest_sev(anomalies: list[dict]) -> str:
     )
 
 
+# ── Flag resolution ───────────────────────────────────────────────────────────
+
+def _resolve_json(args: Namespace) -> bool:
+    """
+    Return True if JSON output was requested via any of:
+      --json             (direct shorthand)
+      --output json      (long form)
+    Both flags are defined in cli_parser and are functionally identical.
+    """
+    if getattr(args, "json", False):
+        return True
+    if getattr(args, "output", "text") == "json":
+        return True
+    return False
+
+
 # ── Human display ─────────────────────────────────────────────────────────────
 
 def _render_human(data: dict[str, Any], args: Namespace) -> None:
     (T, colorize, box_top, box_bottom, box_row,
      section, term_width, Spinner) = _try_theme()
 
-    quiet   = getattr(args, "quiet", False)
+    quiet   = getattr(args, "quiet",   False)
     verbose = getattr(args, "verbose", False)
     w = min(term_width() - 2, 66)
 
-    summary  = data.get("summary", {})
-    metrics  = data.get("metrics", {})
-    recs     = data.get("recommendations", [])
-    ai_sols  = data.get("ai_solutions", [])
+    summary   = data.get("summary", {})
+    metrics   = data.get("metrics", {})
+    recs      = data.get("recommendations", [])
+    ai_sols   = data.get("ai_solutions", [])
     anomalies = data.get("anomalies", [])
 
-    total  = metrics.get("records_processed", 0)
-    errors = metrics.get("error_count", 0)
-    crits  = metrics.get("critical_count", 0)
-    warns  = metrics.get("warning_count", 0)
-    rate   = metrics.get("error_rate", 0.0)
-    files  = summary.get("files_scanned", 0)
+    total   = metrics.get("records_processed", 0)
+    errors  = metrics.get("error_count", 0)
+    crits   = metrics.get("critical_count", 0)
+    warns   = metrics.get("warning_count", 0)
+    rate    = metrics.get("error_rate", 0.0)
+    files   = summary.get("files_scanned", 0)
     highest = summary.get("highest_severity", "none")
 
     if not quiet:
@@ -129,7 +146,7 @@ def _render_human(data: dict[str, Any], args: Namespace) -> None:
         )
         print(colorize(box_bottom(w), T.PRIMARY))
 
-    # Summary table
+    # ── Summary table ─────────────────────────────────────────────────────────
     print()
     print(colorize("  ── Summary ─────────────────────────────────────────", T.DIM))
     print(f"  {colorize('Files Scanned     :', T.DIM)}  {colorize(str(files), T.BOLD)}")
@@ -138,20 +155,23 @@ def _render_human(data: dict[str, Any], args: Namespace) -> None:
     print(f"  {colorize('Critical          :', T.DIM)}  {colorize(str(crits), T.ERROR if crits else T.SUCCESS)}")
     print(f"  {colorize('Warnings          :', T.DIM)}  {colorize(str(warns), T.WARNING if warns else T.SUCCESS)}")
     print(f"  {colorize('Anomalies         :', T.DIM)}  {colorize(str(len(anomalies)), T.WARNING if anomalies else T.SUCCESS)}")
-    print(f"  {colorize('Error Rate        :', T.DIM)}  {colorize(f'{rate:.1%}', T.ERROR if rate >= 0.2 else T.WARNING if rate >= 0.1 else T.SUCCESS)}")
+    print(
+        f"  {colorize('Error Rate        :', T.DIM)}  "
+        f"{colorize(f'{rate:.1%}', T.ERROR if rate >= 0.2 else T.WARNING if rate >= 0.1 else T.SUCCESS)}"
+    )
     print(f"  {colorize('Highest Severity  :', T.DIM)}  {_sev_badge(highest, T, colorize)}")
 
-    # Anomalies
+    # ── Anomalies ─────────────────────────────────────────────────────────────
     if anomalies and (verbose or not quiet):
         print()
         print(colorize("  ── Detected Anomalies ───────────────────────────────", T.DIM))
         for a in anomalies:
-            sev  = a.get("severity", "low")
+            sev   = a.get("severity", "low")
             badge = _sev_badge(sev, T, colorize)
             desc  = a.get("description", "")
             print(f"  [{badge}]  {desc}")
 
-    # AI solutions
+    # ── AI solutions ──────────────────────────────────────────────────────────
     if ai_sols:
         print()
         print(colorize("  ── AI-Powered Analysis ──────────────────────────────", T.DIM))
@@ -172,7 +192,7 @@ def _render_human(data: dict[str, Any], args: Namespace) -> None:
                         if line.strip():
                             print(f"    {line.strip()}")
 
-    # Recommendations
+    # ── Recommendations ───────────────────────────────────────────────────────
     if recs and not quiet:
         print()
         print(colorize("  ── Recommendations ──────────────────────────────────", T.DIM))
@@ -186,7 +206,7 @@ def _render_human(data: dict[str, Any], args: Namespace) -> None:
             if action:
                 print(f"         → {action}")
 
-    # Report path
+    # ── Report path ───────────────────────────────────────────────────────────
     report_path = data.get("report_path")
     if report_path and not quiet:
         print()
@@ -198,13 +218,13 @@ def _render_human(data: dict[str, Any], args: Namespace) -> None:
 
 def _render_json(data: dict[str, Any]) -> None:
     out = {
-        "status":       "success",
-        "summary":      data.get("summary", {}),
-        "metrics":      data.get("metrics", {}),
-        "anomalies":    data.get("anomalies", []),
+        "status":          "success",
+        "summary":         data.get("summary", {}),
+        "metrics":         data.get("metrics", {}),
+        "anomalies":       data.get("anomalies", []),
         "recommendations": data.get("recommendations", []),
-        "ai_solutions": data.get("ai_solutions", []),
-        "report_path":  data.get("report_path"),
+        "ai_solutions":    data.get("ai_solutions", []),
+        "report_path":     data.get("report_path"),
     }
     print(json.dumps(out, indent=2, default=str))
 
@@ -238,21 +258,22 @@ def run(app, args: Namespace) -> int:
     (T, colorize, box_top, box_bottom, box_row,
      section, term_width, Spinner) = _try_theme()
 
-    use_json  = getattr(args, "json", False)
-    quiet     = getattr(args, "quiet", False)
-    no_ai     = getattr(args, "no_ai", False)
-    email_to  = getattr(args, "email", "")
-    path      = getattr(args, "path", "") or os.getcwd()
-    verbose   = getattr(args, "verbose", False)
+    # Resolve JSON flag: either --json or --output json triggers JSON mode.
+    use_json = _resolve_json(args)
+    quiet    = getattr(args, "quiet",   False)
+    no_ai    = getattr(args, "no_ai",   False)
+    email_to = getattr(args, "email",   "")
+    verbose  = getattr(args, "verbose", False)
+    path     = getattr(args, "path",    "") or os.getcwd()
 
-    # Resolve path
+    # Resolve path.
     path = os.path.expanduser(path.strip()) if path else os.getcwd()
 
     if not os.path.exists(path):
         _err(f"Path does not exist: {path}")
         return 3
 
-    # Temporarily disable AI if --no-ai
+    # Temporarily disable AI if --no-ai was passed.
     original_ai = None
     if no_ai:
         try:
@@ -278,7 +299,7 @@ def run(app, args: Namespace) -> int:
             traceback.print_exc()
         return 3
     finally:
-        # Restore AI setting
+        # Restore AI setting regardless of success/failure.
         if original_ai is not None:
             try:
                 app.settings_manager.set("analysis.ai_enabled", original_ai)
@@ -297,7 +318,7 @@ def run(app, args: Namespace) -> int:
     else:
         _render_human(data, args)
 
-    # Email if requested
+    # Optional email delivery.
     if email_to and not use_json:
         try:
             ok = app.emailer.send_log_analysis(email_to, data)

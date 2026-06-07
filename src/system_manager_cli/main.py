@@ -7,7 +7,15 @@ import getpass
 import sys
 import traceback
 from pathlib import Path
+from datetime import datetime
+from system_manager_cli.ulits.theme import T, colorize
 from system_manager_cli.phase3_features import setup_readline, read_input_with_history, PHASE3_ENABLED
+
+# For arrow key interception on Windows
+try:
+    import msvcrt
+except ImportError:
+    msvcrt = None
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -59,6 +67,9 @@ from system_manager_cli.app import SystemManagerApp
 def _bootstrap() -> "SystemManagerApp":  # noqa: F821
     """Initialise the app; exit cleanly on fatal errors."""
     try:
+        # Suppress INFO logs on startup to keep the UI clean for the user
+        logging.getLogger("system_manager_cli").setLevel(logging.WARNING)
+
         # Validate backend configuration early
         from system_manager_cli.config.config import Config
         is_valid, msg = Config.validate_backend_url()
@@ -74,31 +85,41 @@ def _bootstrap() -> "SystemManagerApp":  # noqa: F821
 # ============================================================================
 # UI helpers
 # ============================================================================
+def _draw_status_bar(username: str, app: SystemManagerApp):
+    """Render a professional top status bar."""
+    ts = datetime.now().strftime("%H:%M:%S")
+    status = colorize("● Live", T.SUCCESS) if getattr(app, "_backend_online", False) else colorize("○ Offline", T.WARNING)
+    header = f"  ⚡ SysNova  │  {username.lower()}  │  v1.0  │  {ts}  │  {status}"
+    
+    print(colorize("\n  ╔" + "═" * 66 + "╗", T.PRIMARY))
+    print(colorize("  ║", T.PRIMARY) + header + " " * (66 - 52) + colorize("║", T.PRIMARY))
+    print(colorize("  ╚" + "═" * 66 + "╝", T.PRIMARY))
 
 def _div(char="=", width=52):
-    print(char * width)
+    print(colorize("  " + char * width, T.PRIMARY))
 
 def _header(title: str):
-    _div()
-    print(f"  {title}")
-    _div()
+    print(colorize("\n  ── " + title + " ──────────────────────────────────────────", T.BOLD + T.PRIMARY))
 
 def _prompt(msg: str) -> str:
     if PHASE3_ENABLED:
-        return read_input_with_history(f"\n  {msg} ")
-    return input(f"\n  {msg} ").strip()
+        return read_input_with_history(colorize(f"  {msg} ", T.BOLD + T.PRIMARY))
+    return input(f"  {msg} ").strip()
 
 def _pause():
-    input("\n  Press any key to continue...")
+    input(colorize("\n  Press [Enter] to continue...", T.DIM))
 
 def _clear_line():
-    print()
+    if sys.platform == 'win32':
+        import os
+        os.system('cls')
+    else:
+        print("\033[2K\033[1G", end='')
 
 
 # ============================================================================
 # LOGIN / REGISTER / VERIFY
 # ============================================================================
-
 def _get_password(label: str = "Enter Password:") -> str:
     """Ask whether to show password while typing, then read it.
     
@@ -333,16 +354,17 @@ def run_login_screen(app) -> tuple[str, str]:
     """
     while True:
         _clear_line()
-        _div()
-        print("       SYSNOVA")
-        _div()
-        print("  1.  Login")
-        print("  2.  Register")
-        print("  3.  Verify Email")
-        print("  4.  Forgot Password")
-        print("  5.  Resend Verification")
-        print("  0.  Exit")
-        _div()
+        print(colorize("\n  ╔══════════════════════════════════════════════════╗", T.PRIMARY))
+        print(colorize("  ║               S Y S N O V A                      ║", T.BOLD + T.WHITE))
+        print(colorize("  ║      Intelligent Management Platform             ║", T.DIM))
+        print(colorize("  ╚══════════════════════════════════════════════════╝", T.PRIMARY))
+        
+        print(f"\n  {colorize('[1]', T.PRIMARY)} Login")
+        print(f"  {colorize('[2]', T.PRIMARY)} Register")
+        print(f"  {colorize('[3]', T.PRIMARY)} Verify Email")
+        print(f"  {colorize('[4]', T.PRIMARY)} Forgot Password")
+        print(f"  {colorize('[5]', T.PRIMARY)} Resend Verification")
+        print(f"  {colorize('[0]', T.DIM)} Exit")
 
         if PHASE3_ENABLED:
             choice = read_input_with_history("\n  Select (0-5): ")
@@ -372,25 +394,28 @@ def run_login_screen(app) -> tuple[str, str]:
 # MAIN MENU
 # ============================================================================
 
-def _print_main_menu(username: str):
+def _print_main_menu(username: str, app: SystemManagerApp):
     _clear_line()
-    _div()
-    print(f"  {username.upper()} - LOGGED IN")
-    _div()
-    print("       MAIN MENU")
-    _div()
-    print("  1 (h)     Health Monitor")
-    print("  2 (f)     File Categorization & Temp File Deletion")
-    print("  3 (l)     Logs Analysis System")
-    print("  4 (b)     Data Backup System")
-    print("  5 (s)     Schedule Tasks")
-    print("  6 (c)     Settings")
-    print("  7         Logout")
-    print("  0 (q)     Exit")
-    _div()
-    print("  (?) Help  │  (h) Health  │  (b) Backup  │  (l) Logs")
-    print("  (f) Files │  (s) Schedule │  (c) Config  │  (q) Quit")
-    _div()
+    _draw_status_bar(username, app)
+    
+    print(f"\n  {colorize('SYSTEM', T.DIM)}")
+    print(f"   {colorize('[1]', T.PRIMARY)}    Health Monitor")
+    print(f"   {colorize('[2]', T.PRIMARY)}    File Organizer")
+    
+    print(f"\n  {colorize('ANALYSIS', T.DIM)}")
+    print(f"   {colorize('[3]', T.PRIMARY)}    Logs Analysis")
+    
+    print(f"\n  {colorize('DATA & AUTOMATION', T.DIM)}")
+    print(f"   {colorize('[4]', T.PRIMARY)}    Data Backup")
+    print(f"   {colorize('[5]', T.PRIMARY)}    Schedule Tasks")
+    
+    print(f"\n  {colorize('ACCOUNT', T.DIM)}")
+    print(f"   {colorize('[6]', T.PRIMARY)}  ⚙  Settings")
+    print(f"   {colorize('[7]', T.PRIMARY)}    Logout")
+    print(f"   {colorize('[0]', T.DIM)}  ✖  Exit")
+    
+    print(colorize("\n  " + "─" * 68, T.DIM))
+    print(colorize("   Type number or command  │  [Tab] Complete  │  [↑↓] History", T.DIM))
 
 
 def _handle_main_menu_input(choice: str, app, session_id: str, username: str) -> tuple[bool, str, str]:
@@ -747,7 +772,7 @@ def main():
         sys.exit(e.code)
 
     while True:
-        _print_main_menu(username)
+        _print_main_menu(username, app)
         
         if PHASE3_ENABLED:
             choice = read_input_with_history("\n  Enter choice: ")

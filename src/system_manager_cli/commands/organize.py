@@ -3,16 +3,17 @@ commands/organize.py — Direct CLI handler for: sysmanager organize
 
 Usage
 ─────
-    sysmanager organize /Downloads           # Categorize + handle temp files
-    sysmanager organize /Downloads --dry-run # Preview what would move (no changes)
-    sysmanager organize /Downloads --delete-temp  # Permanently delete temp files
-    sysmanager organize /Downloads --json    # Machine-readable result
+    sysmanager organize /Downloads              Categorize + handle temp files
+    sysmanager organize /Downloads --dry-run    Preview what would move (no changes)
+    sysmanager organize /Downloads --delete-temp  Permanently delete temp files
+    sysmanager organize /Downloads --json       Machine-readable result
+    sysmanager organize /Downloads --verbose    Include skipped-file detail
 
 Exit codes
 ──────────
-    0   success
-    1   partial (some files skipped)
-    2   path error
+    0   success, all files processed
+    1   partial success (some files skipped)
+    2   path error (not found / not a directory)
     3   unexpected error
 """
 
@@ -72,17 +73,17 @@ def _err(msg: str) -> None:
 # ── Category icons ────────────────────────────────────────────────────────────
 
 _CAT_ICONS: dict[str, str] = {
-    "Documents":    "📄",
-    "Images":       "🖼 ",
-    "Videos":       "🎬",
-    "Audio":        "🎵",
-    "Archives":     "📦",
-    "Code":         "💻",
-    "Executables":  "⚙ ",
-    "Fonts":        "🔤",
-    "Data":         "📊",
-    "Uncategorized":"📁",
-    "_TempFiles":   "🗑 ",
+    "Documents":     "📄",
+    "Images":        "🖼 ",
+    "Videos":        "🎬",
+    "Audio":         "🎵",
+    "Archives":      "📦",
+    "Code":          "💻",
+    "Executables":   "⚙ ",
+    "Fonts":         "🔤",
+    "Data":          "📊",
+    "Uncategorized": "📁",
+    "_TempFiles":    "🗑 ",
 }
 
 
@@ -91,37 +92,46 @@ _CAT_ICONS: dict[str, str] = {
 def _dry_run_scan(folder: Path) -> dict[str, Any]:
     """
     Walk the folder (top-level only) and predict categorisation without
-    actually moving anything.  Returns the same shape as FileCategorizer.organize().
+    making any changes.  Returns the same shape as FileCategorizer.organize().
     """
     try:
         from system_manager_cli.core.File_categorizer import (
             CATEGORIES, TEMP_EXTENSIONS, TEMP_NAME_PATTERNS, _OWN_FOLDERS,
         )
     except ImportError:
-        return {"status": "error", "error": "FileCategorizer not importable"}
+        return {
+            "status": "error",
+            "error": (
+                "FileCategorizer module not importable — "
+                "cannot run dry-run without it."
+            ),
+        }
 
-    counts: dict[str, int] = {}
+    counts:  dict[str, int] = {}
     temp_count = 0
-    skipped: list[str] = []
+    skipped:   list[str]   = []
 
-    for item in sorted(folder.iterdir()):
+    try:
+        items = sorted(folder.iterdir())
+    except PermissionError as exc:
+        return {"status": "error", "error": f"Permission denied: {exc}"}
+
+    for item in items:
         if item.name.startswith("."):
             continue
         if item.name in _OWN_FOLDERS:
             continue
-        if item.is_dir():
-            continue
-        if not item.is_file():
+        if item.is_dir() or not item.is_file():
             continue
 
-        # Temp check
         suffix = item.suffix.lower()
-        is_temp = suffix in TEMP_EXTENSIONS or any(p.search(item.name) for p in TEMP_NAME_PATTERNS)
+        is_temp = suffix in TEMP_EXTENSIONS or any(
+            p.search(item.name) for p in TEMP_NAME_PATTERNS
+        )
         if is_temp:
             temp_count += 1
             continue
 
-        # Category
         category = "Uncategorized"
         for cat, exts in CATEGORIES.items():
             if suffix in exts:
@@ -141,12 +151,17 @@ def _dry_run_scan(folder: Path) -> dict[str, Any]:
 
 # ── Human display ─────────────────────────────────────────────────────────────
 
-def _render_human(data: dict[str, Any], args: Namespace, is_dry_run: bool = False) -> None:
+def _render_human(
+    data:       dict[str, Any],
+    args:       Namespace,
+    is_dry_run: bool = False,
+) -> None:
     (T, colorize, box_top, box_bottom, box_row,
      section, term_width, command_bar, progress_bar, Spinner) = _try_theme()
 
-    quiet = getattr(args, "quiet", False)
-    w = min(term_width() - 2, 66)
+    quiet   = getattr(args, "quiet",   False)
+    verbose = getattr(args, "verbose", False)
+    w       = min(term_width() - 2, 66)
 
     counts   = data.get("category_counts", {})
     temp_cnt = data.get("temp_files_handled", 0)
@@ -156,7 +171,11 @@ def _render_human(data: dict[str, Any], args: Namespace, is_dry_run: bool = Fals
     total    = sum(counts.values())
 
     if not quiet:
-        label = "FILE ORGANIZER  (DRY RUN — no changes made)" if is_dry_run else "FILE ORGANIZER"
+        label = (
+            "FILE ORGANIZER  (DRY RUN — no changes made)"
+            if is_dry_run
+            else "FILE ORGANIZER"
+        )
         print()
         print(colorize(box_top(w), T.PRIMARY))
         print(
@@ -168,13 +187,14 @@ def _render_human(data: dict[str, Any], args: Namespace, is_dry_run: bool = Fals
         )
         print(colorize(box_bottom(w), T.PRIMARY))
 
-    # Summary stats
+    # ── Summary stats ─────────────────────────────────────────────────────────
     print()
     print(colorize("  ── Summary ─────────────────────────────────────────", T.DIM))
     print(f"  {colorize('Folder       :', T.DIM)}  {colorize(folder, T.WHITE)}")
 
+    moved_label = "Would move" if is_dry_run else "Files moved"
     total_color = T.SUCCESS if total > 0 else T.DIM
-    print(f"  {colorize('Files moved  :', T.DIM)}  {colorize(str(total), total_color + T.BOLD)}")
+    print(f"  {colorize(moved_label + ' :', T.DIM)}  {colorize(str(total), total_color + T.BOLD)}")
 
     temp_color = T.WARNING if temp_cnt > 0 else T.DIM
     print(f"  {colorize('Temp files   :', T.DIM)}  {colorize(str(temp_cnt), temp_color)}  ({temp_act})")
@@ -183,9 +203,9 @@ def _render_human(data: dict[str, Any], args: Namespace, is_dry_run: bool = Fals
     print(f"  {colorize('Skipped      :', T.DIM)}  {colorize(str(len(skipped)), skip_color)}")
 
     if is_dry_run:
-        print(f"\n  {colorize('ℹ  DRY RUN: no files were moved.', T.WARNING)}")
+        print(f"\n  {colorize('ℹ  DRY RUN: no files were moved or deleted.', T.WARNING)}")
 
-    # Category breakdown table
+    # ── Category breakdown ────────────────────────────────────────────────────
     if counts:
         print()
         print(colorize("  ── Category Breakdown ───────────────────────────────", T.DIM))
@@ -203,28 +223,34 @@ def _render_human(data: dict[str, Any], args: Namespace, is_dry_run: bool = Fals
                 t.add_row([f"{icon}  {cat}", str(cnt)])
             t.print()
         except Exception:
-            # Fallback: manual bars
             bar_w = 24
             for cat, cnt in sorted(counts.items(), key=lambda x: -x[1]):
-                icon  = _CAT_ICONS.get(cat, "📁")
+                icon   = _CAT_ICONS.get(cat, "📁")
                 filled = int((cnt / max_count) * bar_w)
-                bar   = "█" * filled + "░" * (bar_w - filled)
-                print(f"  {icon}  {cat:<18} {colorize(bar, T.PRIMARY)}  {colorize(str(cnt), T.BOLD)}")
+                bar    = "█" * filled + "░" * (bar_w - filled)
+                print(
+                    f"  {icon}  {cat:<18} "
+                    f"{colorize(bar, T.PRIMARY)}  "
+                    f"{colorize(str(cnt), T.BOLD)}"
+                )
 
-    # Temp files
+    # ── Temp files note ───────────────────────────────────────────────────────
     if temp_cnt > 0:
         print()
         action_text = colorize(temp_act, T.WARNING if "delet" in temp_act else T.DIM)
         print(f"  🗑   {colorize(str(temp_cnt), T.BOLD)} temp file(s) {action_text}")
 
-    # Skipped files
+    # ── Skipped files (verbose shows all, non-verbose shows first 10) ─────────
     if skipped:
         print()
         print(colorize("  ── Skipped Files ────────────────────────────────────", T.DIM))
-        for s in skipped[:10]:
+        display_limit = len(skipped) if verbose else 10
+        for s in skipped[:display_limit]:
             print(f"  {colorize('⚠', T.WARNING)}  {s}")
-        if len(skipped) > 10:
-            print(f"  {colorize(f'  … and {len(skipped) - 10} more.', T.DIM)}")
+        if len(skipped) > display_limit:
+            print(
+                f"  {colorize(f'  … and {len(skipped) - display_limit} more. Use --verbose to see all.', T.DIM)}"
+            )
 
     print()
 
@@ -249,13 +275,14 @@ def run(app, args: Namespace) -> int:
     (T, colorize, box_top, box_bottom, box_row,
      section, term_width, command_bar, progress_bar, Spinner) = _try_theme()
 
-    use_json    = getattr(args, "json", False)
-    quiet       = getattr(args, "quiet", False)
-    dry_run     = getattr(args, "dry_run", False)
+    use_json    = getattr(args, "json",        False)
+    quiet       = getattr(args, "quiet",       False)
+    verbose     = getattr(args, "verbose",     False)
+    dry_run     = getattr(args, "dry_run",     False)
     delete_temp = getattr(args, "delete_temp", False)
-    path_str    = getattr(args, "path", "") or ""
+    path_str    = getattr(args, "path",        "") or ""
 
-    # Resolve path
+    # ── Resolve path ──────────────────────────────────────────────────────────
     path_str = os.path.expanduser(path_str.strip()) if path_str else os.getcwd()
     folder   = Path(path_str)
 
@@ -270,7 +297,7 @@ def run(app, args: Namespace) -> int:
                     hints=[
                         "Check for typos in the path",
                         "Use an absolute path (e.g. /home/user/Downloads)",
-                        "Run 'ls' or 'dir' to verify the path exists",
+                        "Run 'ls' to verify the path exists",
                     ],
                 )
             except ImportError:
@@ -281,12 +308,19 @@ def run(app, args: Namespace) -> int:
         _err(f"Path is not a directory: {path_str}")
         return 2
 
-    # Dry run
+    # ── Dry run ───────────────────────────────────────────────────────────────
     if dry_run:
         if not quiet and not use_json:
-            print(f"\n  {colorize('➤', T.PRIMARY)}  Scanning (dry run): {colorize(path_str, T.WHITE)}")
+            print(
+                f"\n  {colorize('➤', T.PRIMARY)}  "
+                f"Scanning (dry run): {colorize(path_str, T.WHITE)}"
+            )
 
         data = _dry_run_scan(folder)
+
+        if data.get("status") == "error":
+            _err(data.get("error", "Dry-run scan failed."))
+            return 3
 
         if use_json:
             _render_json(data)
@@ -295,16 +329,22 @@ def run(app, args: Namespace) -> int:
 
         return 0
 
-    # Apply delete-temp setting if flag given
+    # ── Apply delete-temp setting if --delete-temp flag was passed ────────────
+    original_delete_pref: bool | None = None
     if delete_temp:
         try:
+            original_delete_pref = app.settings_manager.get(
+                "file_organizer.delete_temp_permanently", False
+            )
             app.settings_manager.set("file_organizer.delete_temp_permanently", True)
         except Exception:
             pass
 
-    # Real run
+    # ── Real run ──────────────────────────────────────────────────────────────
     if not quiet and not use_json:
-        print(f"\n  {colorize('➤', T.PRIMARY)}  Organizing: {colorize(path_str, T.WHITE)}")
+        print(
+            f"\n  {colorize('➤', T.PRIMARY)}  Organizing: {colorize(path_str, T.WHITE)}"
+        )
 
     try:
         if not use_json and not quiet:
@@ -314,10 +354,19 @@ def run(app, args: Namespace) -> int:
             result = app.execute_categorize_files(path_str)
     except Exception as exc:
         _err(f"Organize error: {exc}")
-        if getattr(args, "verbose", False):
+        if verbose:
             import traceback
             traceback.print_exc()
         return 3
+    finally:
+        # Restore original delete-temp preference.
+        if original_delete_pref is not None:
+            try:
+                app.settings_manager.set(
+                    "file_organizer.delete_temp_permanently", original_delete_pref
+                )
+            except Exception:
+                pass
 
     if result.get("status") not in ("success",):
         msg = result.get("error") or result.get("display", "Unknown error")
@@ -328,13 +377,6 @@ def run(app, args: Namespace) -> int:
         _render_json(result)
     else:
         _render_human(result, args, is_dry_run=False)
-
-    # Restore delete-temp setting
-    if delete_temp:
-        try:
-            app.settings_manager.set("file_organizer.delete_temp_permanently", False)
-        except Exception:
-            pass
 
     skipped = result.get("skipped", [])
     return 1 if skipped else 0

@@ -73,6 +73,7 @@ from system_manager_cli.ulits.logger import get_logger
 from system_manager_cli.ulits.email_cooldown import EmailCooldownManager
 from system_manager_cli.updater.auto_updater import AutoUpdater
 from system_manager_cli.updater.config import UPDATE_CONFIG
+from system_manager_cli.ulits.theme import T, colorize
 
 logger = get_logger(__name__)
 
@@ -99,7 +100,7 @@ class SystemManagerApp:
         # Validate backend URL configuration
         is_valid, msg = Config.validate_backend_url()
         if self.backend.base_url:
-            self.logger.info("Backend URL configured: %s", self.backend.base_url)
+            self.logger.debug("Backend URL configured: %s", self.backend.base_url)
         else:
             self.logger.warning("Backend URL not configured - cloud features disabled")
 
@@ -132,7 +133,7 @@ class SystemManagerApp:
         )
         # Start the auto-runner as a daemon thread
         self._task_runner.start()
-        self.logger.info("Scheduled task auto-runner started (daemon, 60s interval)")
+        self.logger.debug("Scheduled task auto-runner started (daemon, 60s interval)")
 
         # ── Log analysis pipeline ──────────────────────────────────────
         self.reader           = LogReader()
@@ -154,11 +155,8 @@ class SystemManagerApp:
         if self.backend.base_url:
             self._backend_online = self.backend.ping()
             if not self._backend_online:
-                self.logger.warning(
-                    "Backend at %s is not reachable. "
-                "Using local auth and skipping cloud features.",
-                self.backend.base_url,
-            )
+                print(f"\n  {colorize('⚠', T.WARNING)}  {colorize('Backend unreachable:', T.BOLD)} "
+                      f"{colorize('Falling back to local database mode.', T.DIM)}")
 
         try:
             if self.updater.check_rollback_needed():

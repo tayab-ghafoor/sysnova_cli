@@ -4,7 +4,7 @@ phase3_features.py — Phase 3 Enhanced Input with Autocomplete and History.
 Features
 ────────
 - Tab autocomplete for menu shortcuts and commands
-- Arrow-key command history navigation
+- Arrow-key command history navigation (via readline)
 - --json output for commands
 - Inline help
 
@@ -18,6 +18,10 @@ Fixes applied
 - Added macOS libedit compatibility for the tab-completion binding.
 - Merged autocomplete logic so Tab-completion works for both shortcuts AND
   full commands.
+- Added missing commands: status, update, login, logout to COMMANDS list.
+- Extended SHORTCUTS to cover all top-level menu items.
+- setup_readline() is now called automatically on module import so callers
+  get completion without an explicit setup call.
 """
 
 from __future__ import annotations
@@ -40,9 +44,9 @@ except ImportError:
         READLINE_AVAILABLE = False
 
 
-# ── XDG-compliant data directory (mirrors task_scheduler.py) ──────────────────
+# ── XDG-compliant data directory ──────────────────────────────────────────────
 # Centralised here so phase3_features never needs to import Config, which was
-# the chain that ultimately led to the PermissionError on startup.
+# the chain that ultimately led to a PermissionError on startup.
 
 _APP_NAME = "sysnova"
 
@@ -50,21 +54,20 @@ _APP_NAME = "sysnova"
 def _get_data_dir() -> Path:
     """Return the application data directory, creating it if necessary."""
     xdg_data_home = os.environ.get("XDG_DATA_HOME", "").strip()
-    if xdg_data_home:
-        base = Path(xdg_data_home)
-    else:
-        base = Path.home() / ".local" / "share"
+    base = Path(xdg_data_home) if xdg_data_home else Path.home() / ".local" / "share"
     data_dir = base / _APP_NAME
     data_dir.mkdir(parents=True, exist_ok=True)
     return data_dir
 
 
+# ── Command history ────────────────────────────────────────────────────────────
+
 class CommandHistory:
     """Manages command history for the application."""
 
-    def __init__(self, max_history: int = 100):
-        self.max_history = max_history
-        self.history: list[str] = []
+    def __init__(self, max_history: int = 200):
+        self.max_history   = max_history
+        self.history:      list[str] = []
         self.current_index = -1
         self._load_history()
 
@@ -80,84 +83,101 @@ class CommandHistory:
             self._save_history()
 
     def get_previous(self) -> Optional[str]:
-        """Return the previous command from history."""
         if self.history:
             self.current_index = max(0, self.current_index - 1)
             return self.history[self.current_index]
         return None
 
     def get_next(self) -> Optional[str]:
-        """Return the next command from history."""
         if self.history:
-            self.current_index = min(
-                len(self.history) - 1, self.current_index + 1
-            )
+            self.current_index = min(len(self.history) - 1, self.current_index + 1)
             return self.history[self.current_index]
         return None
 
     def _load_history(self) -> None:
-        """Load persisted history from the XDG data directory."""
         try:
-            # FIX: use the shared XDG data-dir helper instead of importing
-            # Config.DATA_DIR, which resolved to /data (unwritable) on Linux.
             history_file = _get_data_dir() / ".cli_history"
             if history_file.exists():
-                lines = history_file.read_text(encoding="utf-8").strip().split(
-                    "\n"
-                )
-                self.history = [
-                    line for line in lines if line.strip()
-                ][-self.max_history :]
+                lines = history_file.read_text(encoding="utf-8").strip().split("\n")
+                self.history = [line for line in lines if line.strip()][-self.max_history:]
                 self.current_index = len(self.history)
         except Exception:
-            # History is non-critical; never let a failure here crash startup.
-            pass
+            pass  # History is non-critical; never crash startup.
 
     def _save_history(self) -> None:
-        """Persist history to the XDG data directory."""
         try:
-            # FIX: same XDG data-dir fix as _load_history.
             history_file = _get_data_dir() / ".cli_history"
-            history_file.write_text(
-                "\n".join(self.history), encoding="utf-8"
-            )
+            history_file.write_text("\n".join(self.history), encoding="utf-8")
+        except Exception:
+            pass
+
+    def clear(self) -> None:
+        """Wipe in-memory and on-disk history."""
+        self.history       = []
+        self.current_index = -1
+        try:
+            history_file = _get_data_dir() / ".cli_history"
+            if history_file.exists():
+                history_file.unlink()
         except Exception:
             pass
 
     @property
     def all(self) -> list[str]:
-        """Return a copy of the full history list."""
         return self.history.copy()
 
+
+# ── Command autocomplete ───────────────────────────────────────────────────────
 
 class CommandAutocomplete:
     """Provides tab-autocomplete for commands and shortcuts."""
 
+    # Map single-char / short aliases → full command name used by the app.
     SHORTCUTS: dict[str, str] = {
-        "h": "health",
-        "b": "backup",
-        "l": "logs",
-        "f": "files",
-        "s": "schedule",
-        "c": "config",
+        "h":   "health",
+        "b":   "backup",
+        "l":   "logs",
+        "la":  "analyze",
+        "f":   "files",
+        "o":   "organize",
+        "s":   "schedule",
+        "st":  "status",
+        "c":   "config",
         "cfg": "config",
-        "q": "quit",
-        "?": "help",
+        "u":   "update",
+        "q":   "quit",
+        "x":   "exit",
+        "?":   "help",
+        "lo":  "logout",
+        "li":  "login",
     }
 
+    # All top-level commands exposed by the CLI parser.
     COMMANDS: list[str] = [
+        # Operational
         "health",
-        "backup",
-        "logs",
-        "files",
-        "schedule",
-        "config",
         "analyze",
+        "backup",
         "organize",
+        "schedule",
         "status",
+        "update",
+        # Auth
+        "login",
+        "logout",
+        # Meta
         "help",
         "quit",
         "exit",
+        # Legacy TUI aliases
+        "logs",
+        "files",
+        "config",
+    ]
+
+    # Schedule sub-commands (for context-aware completion).
+    SCHEDULE_SUBCMDS: list[str] = [
+        "list", "add", "run", "remove", "enable", "disable",
     ]
 
     @classmethod
@@ -169,25 +189,30 @@ class CommandAutocomplete:
 
         matches: list[str] = []
 
-        # Match digits for menu selection.
+        # Digit → menu selection numbers.
         if partial_lower.isdigit():
             matches.extend(
                 o for o in ("0", "1", "2", "3", "4", "5", "6", "7")
                 if o.startswith(partial_lower)
             )
 
-        # Match shortcuts.
+        # Shortcuts.
         matches.extend(s for s in cls.SHORTCUTS if s.startswith(partial_lower))
 
-        # Match full commands.
+        # Full commands.
         matches.extend(c for c in cls.COMMANDS if c.startswith(partial_lower))
 
-        # Return deduplicated and sorted list.
         return sorted(set(matches))
 
     @classmethod
+    def autocomplete_schedule(cls, partial: str) -> list[str]:
+        """Suggest schedule sub-command names."""
+        partial_lower = partial.lower().strip()
+        return [s for s in cls.SCHEDULE_SUBCMDS if s.startswith(partial_lower)]
+
+    @classmethod
     def complete_path(cls, partial: str) -> list[str]:
-        """Return path-completion suggestions."""
+        """Return filesystem path-completion suggestions."""
         try:
             if partial.startswith("~"):
                 partial = str(Path(partial).expanduser())
@@ -210,6 +235,8 @@ class CommandAutocomplete:
             return []
 
 
+# ── JSON output formatter ──────────────────────────────────────────────────────
+
 class JSONOutputFormatter:
     """Formats command output as JSON for scripting."""
 
@@ -218,10 +245,10 @@ class JSONOutputFormatter:
         return json.dumps(
             {
                 "command": "health",
-                "status": "success",
+                "status":  "success",
                 "data": {
-                    "cpu_percent": cpu,
-                    "ram_percent": ram,
+                    "cpu_percent":  cpu,
+                    "ram_percent":  ram,
                     "disk_percent": disk,
                 },
             },
@@ -233,8 +260,8 @@ class JSONOutputFormatter:
         return json.dumps(
             {
                 "command": "status",
-                "status": "success",
-                "data": {"system_status": status},
+                "status":  "success",
+                "data":    {"system_status": status},
             },
             indent=2,
         )
@@ -244,8 +271,8 @@ class JSONOutputFormatter:
         return json.dumps(
             {
                 "command": "backup",
-                "status": "success",
-                "data": {"backups": backups},
+                "status":  "success",
+                "data":    {"backups": backups},
             },
             indent=2,
         )
@@ -255,8 +282,8 @@ class JSONOutputFormatter:
         return json.dumps(
             {
                 "command": "schedule",
-                "status": "success",
-                "data": {"tasks": tasks},
+                "status":  "success",
+                "data":    {"tasks": tasks},
             },
             indent=2,
         )
@@ -269,13 +296,18 @@ class JSONOutputFormatter:
         )
 
 
-# ── Enhanced Input Handler with readline support ──────────────────────────────
+# ── Readline integration ───────────────────────────────────────────────────────
 
 _history = CommandHistory()
 
 
 def setup_readline() -> None:
-    """Configure readline for enhanced interactive input (no-op if unavailable)."""
+    """
+    Configure readline for enhanced interactive input.
+
+    Safe to call multiple times; no-op if readline is unavailable
+    (Windows without pyreadline3, or restricted containers).
+    """
     if not READLINE_AVAILABLE or _readline_module is None:
         return
     try:
@@ -284,6 +316,7 @@ def setup_readline() -> None:
             return options[state] if state < len(options) else None
 
         _readline_module.set_completer(completer)
+        _readline_module.set_completer_delims(" \t\n;")
 
         # macOS ships a libedit-based readline with a different bind syntax.
         doc = getattr(_readline_module, "__doc__", "") or ""
@@ -293,14 +326,15 @@ def setup_readline() -> None:
             _readline_module.parse_and_bind("tab: complete")
 
     except Exception:
-        pass
+        pass  # Enhancement failure must never crash the application.
 
 
 def read_input_with_history(prompt: str) -> str:
-    """Read input, adding it to the in-process history."""
+    """Read a line of input and record it in the command history."""
     try:
         user_input = input(prompt).strip()
-        _history.add(user_input)
+        if user_input:
+            _history.add(user_input)
         return user_input
     except KeyboardInterrupt:
         raise
@@ -309,12 +343,12 @@ def read_input_with_history(prompt: str) -> str:
 
 
 def get_command_history() -> list[str]:
-    """Return the full command history."""
+    """Return a copy of the full command history."""
     return _history.all
 
 
 def export_history(filepath: str) -> None:
-    """Export command history to *filepath*."""
+    """Export command history to *filepath* (one entry per line)."""
     try:
         Path(filepath).write_text("\n".join(_history.all), encoding="utf-8")
     except Exception as exc:
@@ -323,4 +357,7 @@ def export_history(filepath: str) -> None:
 
 # ── Feature flag ───────────────────────────────────────────────────────────────
 
-PHASE3_ENABLED = True  # Set to False to disable Phase 3 features
+PHASE3_ENABLED = True  # Set to False to disable Phase 3 features globally.
+
+# Auto-setup readline on import so callers do not need an explicit call.
+setup_readline()

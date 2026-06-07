@@ -1,0 +1,152 @@
+2026-05-23 13:16:02,719 [INFO] AutoUpdater initialised
+2026-05-23 13:16:02,719 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-23 13:16:02,719 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-23 13:16:02,719 [INFO]   frozen       : False
+2026-05-23 13:20:10,462 [INFO] AutoUpdater initialised
+2026-05-23 13:20:10,462 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-23 13:20:10,462 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-23 13:20:10,462 [INFO]   frozen       : False
+2026-05-23 13:21:22,729 [INFO] AutoUpdater initialised
+2026-05-23 13:21:22,729 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-23 13:21:22,729 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-23 13:21:22,729 [INFO]   frozen       : False
+2026-05-23 13:23:45,664 [INFO] AutoUpdater initialised
+2026-05-23 13:23:45,680 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-23 13:23:45,680 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-23 13:23:45,680 [INFO]   frozen       : False
+2026-05-23 15:17:58,485 [INFO] AutoUpdater initialised
+2026-05-23 15:17:58,485 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-23 15:17:58,485 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-23 15:17:58,485 [INFO]   frozen       : False
+2026-05-23 15:18:38,941 [INFO] AutoUpdater initialised
+2026-05-23 15:18:38,941 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-23 15:18:38,941 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-23 15:18:38,941 [INFO]   frozen       : False
+2026-05-24 16:09:20,527 [INFO] AutoUpdater initialised
+2026-05-24 16:09:20,527 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-24 16:09:20,527 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-24 16:09:20,527 [INFO]   frozen       : False
+2026-05-24 22:03:08,508 [INFO] AutoUpdater initialised
+2026-05-24 22:03:08,508 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-24 22:03:08,509 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-24 22:03:08,509 [INFO]   frozen       : False
+2026-05-24 22:12:20,890 [INFO] AutoUpdater initialised
+2026-05-24 22:12:20,890 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-24 22:12:20,890 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-24 22:12:20,890 [INFO]   frozen       : False
+2026-05-25 10:39:59,369 [INFO] AutoUpdater initialised
+2026-05-25 10:39:59,374 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 10:39:59,374 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 10:39:59,375 [INFO]   frozen       : False
+2026-05-25 10:59:12,345 [INFO] AutoUpdater initialised
+2026-05-25 10:59:12,345 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 10:59:12,345 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 10:59:12,345 [INFO]   frozen       : False
+2026-05-25 11:08:18,303 [INFO] AutoUpdater initialised
+2026-05-25 11:08:18,304 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 11:08:18,304 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 11:08:18,304 [INFO]   frozen       : False
+2026-05-25 14:28:28,249 [INFO] AutoUpdater initialised
+2026-05-25 14:28:28,249 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 14:28:28,249 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 14:28:28,249 [INFO]   frozen       : False
+2026-05-25 14:28:37,982 [INFO] AutoUpdater initialised
+2026-05-25 14:28:37,982 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 14:28:37,982 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 14:28:37,982 [INFO]   frozen       : False
+2026-05-25 17:11:25,556 [INFO] AutoUpdater initialised
+2026-05-25 17:11:25,556 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 17:11:25,556 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 17:11:25,556 [INFO]   frozen       : False
+2026-05-25 20:21:17,742 [INFO] AutoUpdater initialised
+2026-05-25 20:21:17,758 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 20:21:17,758 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 20:21:17,758 [INFO]   frozen       : False
+2026-05-25 21:22:01,656 [INFO] AutoUpdater initialised
+2026-05-25 21:22:01,656 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-25 21:22:01,656 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-25 21:22:01,656 [INFO]   frozen       : False
+2026-05-26 07:42:08,563 [INFO] AutoUpdater initialised
+2026-05-26 07:42:08,563 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:42:08,563 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:42:08,563 [INFO]   frozen       : False
+2026-05-26 07:49:59,653 [INFO] AutoUpdater initialised
+2026-05-26 07:49:59,653 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:49:59,653 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:49:59,653 [INFO]   frozen       : False
+2026-05-26 07:51:46,534 [INFO] AutoUpdater initialised
+2026-05-26 07:51:46,534 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:51:46,549 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:51:46,549 [INFO]   frozen       : False
+2026-05-26 07:54:19,387 [INFO] AutoUpdater initialised
+2026-05-26 07:54:19,387 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:54:19,387 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:54:19,387 [INFO]   frozen       : False
+2026-05-26 07:56:08,670 [INFO] AutoUpdater initialised
+2026-05-26 07:56:08,670 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:56:08,670 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:56:08,670 [INFO]   frozen       : False
+2026-05-26 07:57:04,534 [INFO] AutoUpdater initialised
+2026-05-26 07:57:04,534 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:57:04,534 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:57:04,534 [INFO]   frozen       : False
+2026-05-26 07:58:19,379 [INFO] AutoUpdater initialised
+2026-05-26 07:58:19,379 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:58:19,379 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:58:19,379 [INFO]   frozen       : False
+2026-05-26 07:59:00,223 [INFO] AutoUpdater initialised
+2026-05-26 07:59:00,223 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 07:59:00,223 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 07:59:00,223 [INFO]   frozen       : False
+2026-05-26 08:00:08,457 [INFO] AutoUpdater initialised
+2026-05-26 08:00:08,457 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 08:00:08,463 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 08:00:08,463 [INFO]   frozen       : False
+2026-05-26 08:00:49,034 [INFO] AutoUpdater initialised
+2026-05-26 08:00:49,034 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 08:00:49,034 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 08:00:49,034 [INFO]   frozen       : False
+2026-05-26 08:01:18,623 [INFO] AutoUpdater initialised
+2026-05-26 08:01:18,623 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 08:01:18,631 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 08:01:18,631 [INFO]   frozen       : False
+2026-05-26 08:02:10,265 [INFO] AutoUpdater initialised
+2026-05-26 08:02:10,265 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 08:02:10,265 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 08:02:10,265 [INFO]   frozen       : False
+2026-05-26 08:02:52,631 [INFO] AutoUpdater initialised
+2026-05-26 08:02:52,631 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 08:02:52,631 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 08:02:52,631 [INFO]   frozen       : False
+2026-05-26 08:09:31,567 [INFO] AutoUpdater initialised
+2026-05-26 08:09:31,567 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 08:09:31,567 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 08:09:31,568 [INFO]   frozen       : False
+2026-05-26 11:02:52,953 [INFO] AutoUpdater initialised
+2026-05-26 11:02:52,953 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-26 11:02:52,953 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-26 11:02:52,953 [INFO]   frozen       : False
+2026-05-27 11:15:16,013 [INFO] AutoUpdater initialised
+2026-05-27 11:15:16,300 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-27 11:15:16,301 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-27 11:15:16,301 [INFO]   frozen       : False
+2026-05-27 11:39:45,404 [INFO] AutoUpdater initialised
+2026-05-27 11:39:45,404 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-27 11:39:45,404 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-27 11:39:45,404 [INFO]   frozen       : False
+2026-05-27 13:17:31,310 [INFO] AutoUpdater initialised
+2026-05-27 13:17:31,311 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-27 13:17:31,311 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-27 13:17:31,311 [INFO]   frozen       : False
+2026-05-27 13:33:54,565 [INFO] AutoUpdater initialised
+2026-05-27 13:33:54,565 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-27 13:33:54,565 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-27 13:33:54,566 [INFO]   frozen       : False
+2026-05-27 15:05:34,762 [INFO] AutoUpdater initialised
+2026-05-27 15:05:34,762 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-27 15:05:34,770 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-27 15:05:34,770 [INFO]   frozen       : False
+2026-05-27 16:08:48,359 [INFO] AutoUpdater initialised
+2026-05-27 16:08:48,359 [INFO]   install_path : F:\SystemManagerCLI\src\system_manager_cli
+2026-05-27 16:08:48,359 [INFO]   state_path   : F:\SystemManagerCLI\src\system_manager_cli\.updater
+2026-05-27 16:08:48,360 [INFO]   frozen       : False
